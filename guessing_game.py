@@ -1,7 +1,7 @@
 from random import randint
 import textwrap
 
-def checkErrors():
+def check_errors():
 	pass
 
 class Display(object):
@@ -55,7 +55,7 @@ def roulette(gen, tries, guess):
 		response(guess,gen)
 		print("\nYou lose. Bang.")
 
-def numTries():
+def num_tries():
 	print("how many tries would you like, skin job?")
 	tries = input("Choose up to 5 tries:")
 	return int(tries)
@@ -66,5 +66,5 @@ def main():
 	display = Display()
 	display.print_greeting()
 
-	roulette(gen, numTries(), guessing())
+	roulette(gen, num_tries(), guessing())
 	print("\n")
