@@ -1,14 +1,19 @@
 from random import randint
 import textwrap
 
-"""
-needs ERROR CHECKING
-"""
-
-GREETING = """welcome to the guessing game, skin job. Your opponent is the computer, EX MACHINA.
-if you lose this game, YOU WILL BE SHOT."""
-
 def checkErrors():
+	pass
+
+class Display(object):
+	GREETING = """welcome to the guessing game, skin job. Your opponent is the computer, EX MACHINA.
+	if you lose this game, YOU WILL BE SHOT."""
+
+	def print_greeting(self):
+		greeting = textwrap.wrap(GREETING,width=30)
+		for text in greeting: #prints each line of greeting
+			print(text)
+
+class Calculations(object):
 	pass
 
 def response(guess, gen):
@@ -55,12 +60,8 @@ def numTries():
 def main():
 	gen = randint(1,21)
 
-	greeting = textwrap.wrap(GREETING,width=30)
-	for text in greeting: #prints each line of greeting
-		print(text)
+	display = Display()
+	display.print_greeting()
 
 	roulette(gen, numTries(), guessing())
 	print("\n")
-
-if __name__ == "__main__":
-	main()
